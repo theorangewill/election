@@ -89,7 +89,7 @@ The open voting operation receives the id, the private key d and p*q. This opera
 
 The publication of votes is the operation to list all votes.
 
-The receipt protest verifies that the vote received by the user is what is stored.
+The receive protest operation verifies that the vote received by the user is what is stored. If it is different, the output is C, if it is equal, E.
 
 The Finalize operation ends the zone that prints the election result.
 
