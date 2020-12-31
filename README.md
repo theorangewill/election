@@ -19,7 +19,8 @@ To encrypt a message m: m^d (mod p*q); to decipher: m^e (mod p*q).
 
 The program has different operations and you can execute it in Voter mode or Zone mode.
 
-For the Voter modality, voters have the following operations:
+### Voter mode
+For the Voter mode, voters have the following operations:
 First, the voter must create the key pairs or use predefined key pairs.
 The identification operation creates the keys. This operation receives an identifier i and an integer t. The generated prime numbers are values between t and 2t-1.
 Impersonate operation uses predefined keys. This operation receives an identifier i and the keys, p q and d, and stores them.
@@ -76,6 +77,7 @@ C 19183 11863 168001133 87794669
 ```
 
 
+### Zone mode
 The Zone mode has the following operations:
 First, the zone must be initialized with the initialization operation. This operation receives the number of voters, i, number of candidates, c, and the minimum value of prime numbers, t.
 
