@@ -36,7 +36,7 @@ The verification vote operation receives a list of votes, v, and encrypted votes
 When the voter finishes the vote, the system prints they key pairs.
 ```
 Operation   | Identifier | Paramethers      | Output       | Error
-------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
 Idenfity    |     I      | i t              | C            | E
 Impersonate |     P      | i p q e d        | C            | E
 Vote        |     V      | v                | C E(f(i,v))  | E
@@ -53,18 +53,23 @@ Example:
 I
 1 10000
 C
+
 //Vote
 V 4
 C 11694666
+
 //Reveal
 R
 C 1 87794669 227567929
+
 //Verify
 C 3 1 4543534 5 4324234 4 534534
 E 1 11694666 87794669 227567929
+
 //Verify
 C 3 1 4234233 5 31323123 4 11694666
 C
+
 //Finalize
 T
 C 19183 11863 168001133 87794669
@@ -90,7 +95,7 @@ The attack operation simulates an attack in the zone. The operation receives an 
 
 ```
 Operation        | Identifier | Paramethers        | Output            | Error
-------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 Initialize       |     I      | i c t              | C                 | E
 Receive vote     |     R      | i E(f(i,v))        | C                 | E
 Blind list votes |     L      |                    | C n k1 k2...      |
@@ -109,32 +114,40 @@ Example:
 I
 5 10  10000
 C
+
 //Receive vote
 R 
 1 11694666
 C
+
 //Blind list votes
 L
 C 1 11694666 
+
 //Open vote
 A 
 1 87794669 227567929
 C
+
 //Publish votes
 P
 C 1 4 11694666
+
 //Receive protest 
 Q 
 1 11694666 87794669 227567929
 E
+
 //Attack
 !
 1 3 35345345          
 C
+
 //Receive protest 
 Q
 1 11694666 87794669 227567929
 C
+
 //Finalize
 T
 C 10 0 0 0 0 1 0 0 0 0 0
